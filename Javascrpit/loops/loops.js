@@ -82,4 +82,9 @@ for (const key of keys) {
 for (const objs in obj) {
     // console.log(`${objs} ${obj[objs]}`)   
 }
-//
+// for in loop in Array:
+
+for (const arrs in arr) {
+    // console.log(`${arr[arrs]}`)
+}
+//Usage:You want to loop through object properties (keys).
