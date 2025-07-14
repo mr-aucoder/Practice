@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api requests</title>
+    <style>
+        .card-container{
+            background-color: aqua;
+            color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="image"></div>
+        <p>Name:<span class="name"></span></p>
+    </div>
+</body>
+ <script>
+    const Link="https://api.github.com/users/mr-aucoder"
+    const xmh=new XMLHttpRequest();//send up a requset 
+    xmh.open("GET",Link)// open a up link whiwch is stored first
+    xmh.onreadystatechange = function () {
+      const image=document.querySelector(".image");
+      if (xmh.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        image.src=data.avatar_url
+        console.log(data);
+        document.querySelector('.name').textContent = data.followers;
+        // Add this line to display the name in HTML
+      }
+
+      console.log(xmh.readyState); // it shows the state
+    };
+
+    xmh.send(); // Don't forget to send the request!
+ </script>
+</html>
