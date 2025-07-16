@@ -78,14 +78,14 @@ const fourthPromise = new Promise((resolve, reject) => {
     if (!error) {
         resolve({ name: "Manu", DOB: "21 August 2008" });
     } else {
-        reject("❌ Error occurred in fourthPromise");
+        reject(" Error occurred in fourthPromise");
     }
 });
 
 async function handleFourthPromise() {
     try {
         const response = await fourthPromise;
-        console.log("✅ Task 4 completed:", response);
+        console.log("Task 4 completed:", response);
     } catch (error) {
         console.log(error);
     }
@@ -103,13 +103,13 @@ async function fetchGitHubUser() {
         const response = await fetch("https://api.github.com/users/mr-aucoder");
 
         if (!response.ok) {
-            throw new Error(`❌ HTTP error! Status: ${response.status}`);
+            throw new Error(` HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log("✅ GitHub User Data (Async):", data);
+        console.log("GitHub User Data (Async):", data);
     } catch (error) {
-        console.log("❌ Fetch error:", error);
+        console.log(" Fetch error:", error);
     }
 }
 
@@ -123,13 +123,13 @@ fetchGitHubUser();
 fetch("https://api.github.com/users/mr-aucoder")
     .then((response) => {
         if (!response.ok) {
-            throw new Error(`❌ HTTP error! Status: ${response.status}`);
+            throw new Error(` HTTP error! Status: ${response.status}`);
         }
         return response.json();
     })
     .then((data) => {
-        console.log("✅ GitHub User Data (.then):", data);
+        console.log(" GitHub User Data (.then):", data);
     })
     .catch((error) => {
-        console.log("❌ Fetch error (.then):", error);
+        console.log(" Fetch error (.then):", error);
     });
