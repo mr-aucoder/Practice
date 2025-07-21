@@ -133,3 +133,15 @@ fetch("https://api.github.com/users/mr-aucoder")
     .catch((error) => {
         console.log(" Fetch error (.then):", error);
     });
+ 
+//====================================================================================
+//  Why we need async await instead of promises in Java Script?
+//==================================================================================== 
+
+// In JavaScript, Promises and async/await do the same thing:
+// They handle asynchronous operations (like fetching data or reading files).
+// But the way you write and read the code is different.
+
+//Async await code looks cleaner like sync code and it easier to debug.
+
+//Note:Both are good the only thing matter is use case.
